@@ -7,10 +7,11 @@ def join_nested_strings(src)
     element_index = 0
     while element_index < src[row_index].count do
       selected_string = src[row_index][element_index]
-      boolean = selected_string.kind_of?(String)
-      if boolean
+      if selected_string.kind_of?(String)
         string_value += " #{selected_string}"
-        flag = false
+        element_index += 1
+      else
+        element_index += 1
       end
     end
     row_index += 1
